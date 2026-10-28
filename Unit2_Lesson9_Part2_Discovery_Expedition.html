@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Discovery Expedition – Unit 2 Lesson 9 Part 2 – English in Action</title>
+<style>
+:root{--sea:#556b2f;--deep:#2b3a1a;--sun:#f4a259;--coral:#c8553d;--leaf:#4f9d69;--foam:#eafaf6;--ink:#12313a}
+*{box-sizing:border-box}
+html,body{margin:0;overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+body{font-family:"Nunito","Segoe UI",system-ui,sans-serif;color:var(--ink);background:linear-gradient(#f4ecd8,#e8f3df);min-height:100vh;font-size:17px}
+h1,h2,.hd{font-family:"Baloo 2","Fredoka One","Trebuchet MS",system-ui,sans-serif;margin:.2em 0}
+header{position:sticky;top:0;z-index:20;background:var(--deep);color:#fff;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+header h1{font-size:1.25rem;color:var(--sun)}
+.pill{background:#ffffff22;border-radius:999px;padding:4px 12px;font-weight:800}
+.bar{flex:1 1 140px;height:12px;background:#ffffff33;border-radius:9px;overflow:hidden;min-width:100px}
+.bar i{display:block;height:100%;width:0;background:var(--sun);transition:width .5s}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--coral);color:#fff;border:0;border-radius:999px;padding:8px 18px;font-weight:800}
+.btn.alt{background:var(--sun);color:var(--ink)}
+.wrap{max-width:980px;margin:auto;padding:14px}
+.intro{background:var(--sea);color:#fff;border-radius:20px;padding:16px 20px}
+.intro p{margin:.3em 0}
+.tickets{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:16px 0}
+.ticket{background:#fff;border-radius:18px;border-left:12px solid var(--c);padding:12px 16px;cursor:pointer;box-shadow:0 3px 0 #0002;border-right:3px dashed #0002}
+.ticket:active{transform:translateY(2px)}
+.ticket p{margin:.2em 0;font-size:.92rem}
+.tag{font-weight:800;font-size:.85rem;color:var(--c)}
+.card{background:#fff;border-radius:16px;padding:12px 16px;margin:10px 0;box-shadow:0 2px 0 #0001}
+.pics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pic{background:#fff;border-radius:14px;padding:8px;text-align:center}
+.big{font-size:44px;line-height:1.1}
+.slot{min-height:46px;border:3px dashed #5aa;border-radius:12px;padding:4px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center}
+.bank{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:#fff8;border-radius:16px;padding:12px;margin-top:12px;min-height:60px}
+.chip{display:inline-block;position:relative;z-index:1;padding:8px 14px;background:var(--sun);border-radius:999px;font-weight:800;touch-action:none;cursor:grab;box-shadow:0 3px 0 #0003}
+.chip.drag{z-index:50;box-shadow:0 10px 18px #0004;scale:1.08}
+.chip.sel{outline:4px solid var(--coral)}
+.chip.done{background:var(--leaf);color:#fff;touch-action:auto;cursor:default;box-shadow:none}
+.bins{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bin{background:#fff;border-radius:14px;padding:8px;text-align:center}
+.bin .slot{min-height:150px;flex-direction:column}
+.opt{display:block;width:100%;text-align:left;background:#f2fbf8;border:2px solid #9cd;border-radius:12px;padding:8px 12px;margin:6px 0;font-weight:700}
+.opt.ok{background:#c9f2d8;border-color:var(--leaf)}
+.opt.bad{background:#ffd6d0;border-color:var(--coral);animation:sh .3s}
+.syls{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.syls .opt{width:auto;margin:0;font-size:1.1rem}
+select,input{font:inherit;font-weight:700;border:2px solid #7bb;border-radius:10px;padding:3px 6px;max-width:100%}
+select.ok{background:#c9f2d8;border-color:var(--leaf)}
+.line{margin:8px 0;line-height:2.2}
+.shake{animation:sh .3s}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.cf{position:fixed;top:-30px;font-size:28px;z-index:99;animation:fall 2.4s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.msg{background:var(--leaf);color:#fff;border-radius:14px;padding:10px 16px;margin:10px 0;font-weight:800}
+.res{position:fixed;inset:0;background:#2b3a1aee;z-index:60;display:flex;align-items:center;justify-content:center;padding:16px}
+.cert{background:#fffbe8;border:8px double var(--sun);border-radius:20px;padding:20px;text-align:center;max-width:520px;width:100%}
+details{background:#fff;border-radius:16px;padding:10px 16px;margin:12px 0}
+summary{font-weight:800;cursor:pointer}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+td,th{border:1px solid #bcd;padding:5px 8px;text-align:left;vertical-align:top}
+footer{text-align:center;padding:18px;font-weight:800;color:var(--sea)}
+@media(max-width:640px){.pics{grid-template-columns:repeat(2,1fr)}.bins{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head>
+<body>
+<header>
+ <h1>🔭 Discovery Expedition</h1>
+ <span class="pill">⭐ <b id="sc">0</b></span>
+ <div class="bar" title="Progress"><i id="pg"></i></div>
+ <button class="pill" id="tmb" style="border:0;color:#fff" onclick="tmr()">⏱ 25:00 ▶</button>
+ <button class="btn alt" onclick="results()">🏁 Results</button>
+</header>
+<div class="wrap">
+<div id="menu">
+ <div class="intro">
+  <h2>Lesson 9, Part 2 – Literacy: Writing</h2>
+  <p>Grade 7 – Unit 2: Animals – Planning a fact file and writing an information text</p>
+  <p>Welcome to the <b>Discovery Expedition</b>, Explorer! You have discovered unusual wild animals. Plan a fact file, write your report and check your work. <b>Choose any channel to start – you can play the stages in any order!</b></p>
+ </div>
+ <div class="tickets" id="tk"></div>
+ <details><summary>👩‍🏫 Teacher's lesson plan (25 minutes)</summary>
+  <p><b>Lesson aims:</b> to write an information text from a fact file; to use it's and its correctly.<br>
+  <b>Teacher's Book:</b> Lesson 9, part 2, pages 123–124 – Activity Book, Lesson 9 part 2 (exercises 1–4; Writing model on page 66). Extra: photocopiable 26.</p>
+  <table><tr><th>Time</th><th>Phase</th><th>Stage</th><th>Link to the Teacher's Book</th></tr>
+  <tr><td>3 min</td><td>Warm-up</td><td>Word Strips</td><td>Starting the lesson: a unit word on each strip; say a sentence with the word</td></tr>
+  <tr><td>4 min</td><td>Formative 1</td><td>It's or Its?</td><td>Exercise 1: read and complete the sentences with it's and its</td></tr>
+  <tr><td>4 min</td><td>Formative 2</td><td>Fact File or Text?</td><td>Exercise 2 and Writing model: notes and abbreviations (fact file) vs full sentences and full words (text)</td></tr>
+  <tr><td>5 min</td><td>Formative 3</td><td>Plan the Fact File</td><td>Exercise 2: plan a fact file about an unusual wild animal</td></tr>
+  <tr><td>5 min</td><td>Differentiation</td><td>Level Up</td><td>Exercise 3: Support (order the text), Challenge (write sentences from notes)</td></tr>
+  <tr><td>4 min</td><td>Closing</td><td>Exit Ticket</td><td>Exercise 4: Check your work checklist; Finishing the lesson questions</td></tr></table>
+  <p><b>Tips:</b> after the game, students write their own fact file and information text in the Activity Book (Exercises 2–3) and use the checklist (Exercise 4). Finish with the class vote on the strangest animal. Fast finishers list animal types (mammals, vertebrates…). Remind students about the dictation in the next lesson.</p>
+ </details>
+</div>
+<div id="stage" hidden>
+ <button class="btn alt" onclick="menu()">⬅ Back to channels</button>
+ <h2 id="sh"></h2><p id="si" class="card"></p>
+ <div id="sb"></div><div id="sm"></div>
+</div>
+</div>
+<footer>Created by T.Badria Alfalahi</footer>
+<div id="rs"></div>
+<script>
+const $=s=>document.querySelector(s),shuf=a=>[...a].sort(()=>Math.random()-.5);
+const JF='<svg viewBox="0 0 48 48" width="50" height="50"><path d="M8 26a16 16 0 0 1 32 0z" fill="#c77dff"/><path d="M13 28q-3 6 0 10t0 6M20 28q-3 6 0 10t0 6M28 28q3 6 0 10t0 6M35 28q3 6 0 10t0 6" stroke="#c77dff" stroke-width="3" fill="none" stroke-linecap="round"/></svg>';
+const ANI=[["dolphin","🐬"],["giraffe","🦒"],["jellyfish",JF],["gorilla","🦍"],["kangaroo","🦘"],["alligator","🐊"],["koala","🐨"],["elephant","🐘"]];
+const S={score:0,cur:null,st:{}};
+const ST=[
+{id:'warm',ic:'🧩',n:'Word Strips',tag:'Warm-up – 3 min',c:'#c8553d',t:5,f:warm,d:'Drag each word into the correct sentence.'},
+{id:'its',ic:'✏️',n:"It's or Its?",tag:'Formative 1 – 4 min',c:'#2a9d8f',t:6,f:its,d:"Choose it's or its for each sentence."},
+{id:'ft',ic:'🗂️',n:'Fact File or Text?',tag:'Formative 2 – 4 min',c:'#8338ec',t:6,f:ft,d:'Sort the writing features: fact file or information text?'},
+{id:'plan',ic:'🦔',n:'Plan the Fact File',tag:'Formative 3 – 5 min',c:'#3a86ff',t:6,f:plan,d:'Drag the notes under the correct headings.'},
+{id:'dif',ic:'🚀',n:'Level Up',tag:'Differentiation – 5 min',c:'#ef476f',t:5,f:dif,d:'Choose your level: Support or Challenge.'},
+{id:'end',ic:'✅',n:'Exit Ticket',tag:'Closing – 4 min',c:'#00a6a6',t:4,f:end,d:'Check your work and show what you have learnt.'}];
+ST.forEach(s=>S.st[s.id]={done:0,t:s.t});
+let AC;function beep(f,d){try{AC=AC||new(window.AudioContext||webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;g.gain.value=.08;o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function say(w){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(w);u.lang='en-GB';u.rate=.8;speechSynthesis.speak(u)}catch(e){}}
+function conf(){for(let i=0;i<30;i++){const s=document.createElement('span');s.className='cf';s.textContent=['🎉','⭐','🐾','🍃'][i%4];s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*.8+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3200)}}
+function upd(){$('#sc').textContent=S.score;const n=ST.filter(s=>S.st[s.id].done>=S.st[s.id].t).length;$('#pg').style.width=n/ST.length*100+'%'}
+function menu(){$('#stage').hidden=true;$('#menu').hidden=false;$('#tk').innerHTML=ST.map(s=>{const k=S.st[s.id];return`<div class="ticket" style="--c:${s.c}" onclick="go('${s.id}')"><span class="tag">${s.tag}</span><h2>${s.ic} ${s.n}</h2><p>${s.d}</p><b>${k.done>=k.t?'✅ Completed':k.done+' / '+k.t}</b></div>`}).join('');upd();scrollTo(0,0)}
+function go(id){const s=ST.find(x=>x.id==id),k=S.st[id];S.score-=k.done*10;k.done=0;S.cur=id;$('#menu').hidden=true;$('#stage').hidden=false;$('#sh').textContent=s.ic+' '+s.n;$('#si').textContent=s.d;$('#sm').innerHTML='';const b=$('#sb');b.innerHTML='';s.f(b);upd();scrollTo(0,0)}
+function got(id){const k=S.st[id];k.done++;S.score+=10;beep(660,.12);upd();if(k.done>=k.t){conf();beep(880,.3);$('#sm').innerHTML='<div class="msg">🎉 Stage complete! Well done! Choose another channel.</div><button class="btn" onclick="menu()">⬅ Back to channels</button>'}}
+function bad(el){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');beep(200,.2)}
+/* drag & drop (pointer events + tap-to-place for iPad) */
+let sel=null;
+document.addEventListener('touchmove',e=>{if(document.querySelector('.chip.drag'))e.preventDefault()},{passive:false});
+function dnd(root,id){
+ const place=(c,slot)=>{if(sel){sel.classList.remove('sel');sel=null}
+  if(!slot)return;
+  if(slot.classList.contains('one')&&slot.querySelector('.chip'))return bad(c);
+  if(c.dataset.k===slot.dataset.t){slot.appendChild(c);c.classList.add('done');if(c.dataset.say)say(c.dataset.say);got(id)}else bad(c)};
+ root.querySelectorAll('.chip').forEach(c=>c.addEventListener('pointerdown',e=>{
+  if(c.classList.contains('done'))return;e.preventDefault();
+  c.setPointerCapture(e.pointerId);const sx=e.clientX,sy=e.clientY;let dr=false;
+  const mv=ev=>{const dx=ev.clientX-sx,dy=ev.clientY-sy;if(!dr&&Math.hypot(dx,dy)>8){dr=true;c.classList.add('drag')}if(dr)c.style.transform=`translate(${dx}px,${dy}px)`};
+  const up=ev=>{c.removeEventListener('pointermove',mv);c.removeEventListener('pointerup',up);c.removeEventListener('pointercancel',up);
+   c.style.transform='';c.classList.remove('drag');
+   if(dr){c.style.pointerEvents='none';const el=document.elementFromPoint(ev.clientX,ev.clientY);c.style.pointerEvents='';place(c,el&&el.closest('.slot'))}
+   else{if(sel)sel.classList.remove('sel');sel=sel===c?null:c;if(sel)c.classList.add('sel')}};
+  c.addEventListener('pointermove',mv);c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up)}));
+ root.querySelectorAll('.slot').forEach(s=>s.addEventListener('click',()=>{if(sel)place(sel,s)}))}
+/* multiple choice engine */
+function mc(box,id,qs){qs.forEach(q=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<p class="hd">${q.q}</p>`+q.o.map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join('');
+ d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(d.dataset.ok||b.disabled)return;if(+b.dataset.j===q.a){b.classList.add('ok');d.dataset.ok=1;got(id)}else{b.classList.add('bad');b.disabled=true;bad(b)}});box.appendChild(d)})}
+/* stages */
+function warm(b){const W=["reptile","insect","vertebrate","invertebrate","strange"];
+ const L=["A crocodile is a {}. It lays eggs.","An ant is an {}. It has six legs.","A {} has a backbone, like a giraffe.","A jellyfish is an {}. It has no bones.","A hammerhead shark has a {} head. It looks like a hammer."];
+ b.innerHTML=`<div class="card">${L.map((l,i)=>`<div class="line">${i+1}. ${l.replace('{}',`<span class="slot one" data-t="${W[i]}" style="display:inline-flex;min-width:140px;vertical-align:middle"></span>`)}</div>`).join('')}</div><div class="bank">${shuf(W).map(w=>`<span class="chip" data-k="${w}" data-say="${w}">${w}</span>`).join('')}</div>`;dnd(b,'warm')}
+function its(b){const L=[["The mata mata turtle can swim well. It uses {} long nose to breathe in the water.","its"],["Ring-tailed lemurs have a long tail. {} used to fight and to communicate.","it's"],["A Komodo dragon uses {} tongue to taste the air and find food.","its"],["The Arabian oryx is the national animal of Oman. {} horns are tall and straight.","its"],["A lizard is a type of reptile. {} in the same family as the crocodile.","it's"],["A giraffe eats leaves from tall trees. That's why {} neck is so long.","its"]];
+ b.innerHTML=`<div class="card"><b>Writing tip:</b> <b>it's</b> = it is / it has. <b>its</b> = belongs to it (possession).</div><div class="card">`+L.map((l,i)=>{const c=/(^|\. )\{\}/.test(l[0]);return `<div class="line">${i+1}. ${l[0].replace('{}',`<select data-n="${i}"><option value="">choose…</option><option>${c?"It's":"it's"}</option><option>${c?'Its':'its'}</option></select>`)}</div>`}).join('')+'</div>';
+ b.querySelectorAll('select').forEach(x=>x.onchange=()=>{if(x.value.toLowerCase()===L[x.dataset.n][1]){x.classList.add('ok');x.disabled=true;got('its')}else{bad(x);x.value=''}})}
+function ft(b){const I=[["Uses headings like Name and Type","f"],["Simple notes: lays eggs","f"],["Abbreviations: 45 cm, 15 kg","f"],["Full sentences: It lays eggs.","t"],["Full words: 45 centimetres, 15 kilograms","t"],["Adjectives: an amazing head","t"]];
+ b.innerHTML=`<div class="card">🗂️ Where does each feature belong? Drag it into the correct box.</div><div class="bins" style="grid-template-columns:1fr 1fr"><div class="bin"><div class="big">📋</div><b>Fact file</b><div class="slot" data-t="f"></div></div><div class="bin"><div class="big">📄</div><b>Information text</b><div class="slot" data-t="t"></div></div></div><div class="bank">${shuf(I).map(x=>`<span class="chip" data-k="${x[1]}">${x[0]}</span>`).join('')}</div>`;dnd(b,'ft')}
+function plan(b){const F=[["Home","forests and deserts in Australia"],["Food","ants and termites"],["Size","up to 45 cm"],["Body","sharp spines"],["Family","lays eggs"],["Interesting facts","uses its long sticky tongue to catch ants"]];
+ b.innerHTML=`<div class="card">🦔 Plan a fact file about an unusual wild animal: the <b>echidna</b>.<br><b>Name:</b> Echidna – <b>Type:</b> Vertebrate mammal<br>Use simple notes and abbreviations (cm, kg).${F.map(f=>`<div class="line"><b style="display:inline-block;min-width:140px">${f[0]}:</b><span class="slot one" data-t="${f[0]}" style="display:inline-flex;min-width:230px;vertical-align:middle"></span></div>`).join('')}</div><div class="bank">${shuf(F).map(f=>`<span class="chip" data-k="${f[0]}">${f[1]}</span>`).join('')}</div>`;dnd(b,'plan')}
+function dif(b){b.innerHTML='<div class="card"><p class="hd">Which level do you choose?</p><button class="btn" id="b1">🌱 Support</button> <button class="btn alt" id="b2">🚀 Challenge</button></div><div id="lv"></div>';
+ const run=(n,f)=>{const k=S.st.dif;S.score-=k.done*10;k.done=0;k.t=n;upd();$('#sm').innerHTML='';const l=$('#lv');l.innerHTML='';f(l)};
+ $('#b1').onclick=()=>run(5,l=>{const T=["The echidna is an unusual vertebrate mammal.","It lives in forests and deserts in Australia.","It eats ants and termites.","An adult can be up to 45 centimetres long and its body is covered in sharp spines.","It lays eggs, and it uses its long sticky tongue to catch ants."];
+  l.innerHTML=`<div class="card">🦔 Put the information text in the correct order, like the fact file.${T.map((t,i)=>`<div class="line"><b>${i+1}.</b> <span class="slot one" data-t="${i}" style="display:inline-flex;min-width:260px;vertical-align:middle"></span></div>`).join('')}</div><div class="bank">${shuf(T.map((t,i)=>[t,i])).map(x=>`<span class="chip" data-k="${x[1]}">${x[0]}</span>`).join('')}</div>`;dnd(l,'dif')});
+ $('#b2').onclick=()=>run(3,l=>{l.innerHTML='<div class="card">🦎 Fact file: <b>Komodo dragon</b>. Write one <b>full sentence</b> for each note. Use full words, not abbreviations!</div>';
+  [["Type: vertebrate reptile",/reptile/i,/\b(is|are)\b/i,"The Komodo dragon is a…"],["Home: islands in Indonesia",/island/i,/\b(live|lives|found)\b/i,"It lives on…"],["Size: up to 3 m",/\b(metres|meters)\b/i,/\b(3|three)\b/i,"An adult can be up to 3 metres…"]].forEach(q=>{
+  const d=document.createElement('div');d.className='card';d.innerHTML=`<p class="hd">${q[0]}</p><input size="40" placeholder="${q[3]}"> <button class="btn">Check</button><p class="fb"></p>`;
+  d.querySelector('button').onclick=()=>{if(d.dataset.ok)return;const v=d.querySelector('input').value,fb=d.querySelector('.fb');
+   if(v.trim().split(/\s+/).length>=5&&q[1].test(v)&&q[2].test(v)){d.dataset.ok=1;fb.textContent='✅ Great full sentence! Read it to your partner.';got('dif')}else{bad(d);fb.textContent='🤔 Write a full sentence (at least 5 words) with full words. Start: '+q[3]}};
+  l.appendChild(d)})})}
+function end(b){mc(b,'end',[{q:"1. Which sentence is correct?",o:["A lizard is a reptile. Its in the same family as the crocodile.","A lizard is a reptile. It's in the same family as the crocodile.","A lizard is a reptile. Its' in the same family as the crocodile."],a:1},{q:"2. Which belongs in a fact file, not in an information text?",o:["It lives in the forests of Australia.","Size: up to 20 cm","The animal has an amazing head."],a:1},{q:"3. Which question is in the “Check your work” list?",o:["Have I drawn a picture?","Have I used capital letters for headings?","Have I used it's and its correctly?"],a:2},{q:"4. What is the correct order for writing an information text?",o:["Plan a fact file, write the text, check your work","Write the text, plan a fact file, check your work","Check your work, write the text, plan a fact file"],a:0}]);
+ const d=document.createElement('div');d.className='card';const C=["Have I included all the information from the fact file?","Have I written in full sentences and used some adjectives?","Have I ordered the text correctly?","Have I used it's and its correctly?"];
+ d.innerHTML=`<p class="hd">✅ Check your work. Tick the steps when you have done them.</p>`+C.map(c=>`<label class="line" style="display:block"><input type="checkbox"> ${c}</label>`).join('')+'<p class="fb"></p>';
+ d.addEventListener('change',()=>{if([...d.querySelectorAll('input')].every(i=>i.checked)){d.querySelector('.fb').textContent='🌟 Great checking! Now write your own information text.';conf()}});b.appendChild(d)}
+/* timer */
+let T=1500,tm=null;function tmr(){const e=$('#tmb');if(tm){clearInterval(tm);tm=null;e.textContent='⏱ '+fmt()+' ▶';return}
+ tm=setInterval(()=>{T=Math.max(0,T-1);e.textContent='⏱ '+fmt()+' ⏸';e.style.background=T<300?'#ff6b57':'';if(!T){clearInterval(tm);tm=null;beep(500,.5)}},1000);e.textContent='⏱ '+fmt()+' ⏸'}
+function fmt(){return String(Math.floor(T/60)).padStart(2,'0')+':'+String(T%60).padStart(2,'0')}
+/* results */
+function results(){const mx=ST.reduce((a,s)=>a+S.st[s.id].t*10,0),p=S.score/mx,r=p>=.85?['🏆','Chief Explorer']:p>=.5?['🥈','Explorer']:['🌱','Junior Explorer'];
+ $('#rs').innerHTML=`<div class="res"><div class="cert"><div class="big">${r[0]}</div><h2>Discovery Expedition Certificate</h2><p>Name: <input id="nm" placeholder="Your name"></p><p class="hd" style="font-size:1.4rem">${r[1]}</p><p>Score: <b>${S.score}</b> / ${mx}</p><p>${ST.map(s=>S.st[s.id].done>=S.st[s.id].t?'✅':'⬜').join(' ')}</p><p>I can write a fact file and an information text! 🔭</p><button class="btn" onclick="$('#rs').innerHTML=''">Keep playing</button><p><small>Created by T.Badria Alfalahi</small></p></div></div>`;if(p>=.5)conf()}
+menu();
+</script></body></html>
